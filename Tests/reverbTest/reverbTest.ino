@@ -14,12 +14,11 @@ AudioConnection patchCord2(lineIn, 1, reverb1, 0);
 AudioConnection patchCord3(reverb1, 0, mixer1, 1);
 AudioConnection patchCord4(mixer1, 0, lineOut, 0);
 AudioConnection patchCord5(mixer1, 0, lineOut, 1);
-AudioControlSGTL5000 sgtl5000_1; //xy=71,97
+AudioControlSGTL5000 audioShield; //xy=71,97
 // GUItool: end automatically generated code
 
 void setup()
 {
-    Serial.begin();
     AudioMemory(20);
     AudioNoInterrupts();
     audioShield.enable();
