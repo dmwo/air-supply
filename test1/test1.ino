@@ -40,4 +40,10 @@ void setup()
     audioShield.unmuteHeadphone();
     audioShield.volume(1.0);
     LPF.begin(LPF_Coeffs, 10);
+    AudioInterrupts();
+}
+
+void loop()
+{
+    
 }
