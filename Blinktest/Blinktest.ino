@@ -7,12 +7,12 @@
 // Teensy 2.0 has the LED on pin 11
 // Teensy++ 2.0 has the LED on pin 6
 // Teensy 3.x / Teensy LC have the LED on pin 13
-const int ledPin = 13;
+short ledPin = 13;
 
 // the setup() method runs once, when the sketch starts
 
 void setup() {
-  // initialize the digital pin as an output.
+  
   pinMode(ledPin, OUTPUT);
 }
 
@@ -21,7 +21,7 @@ void setup() {
 
 void loop() {
   digitalWrite(ledPin, HIGH);   // set the LED on
-  delay(500);                  // wait for a second
+  delay(5000);                  // wait for a second
   digitalWrite(ledPin, LOW);    // set the LED off
-  delay(500);                  // wait for a second
+  delay(5000);                  // wait for a second
 }
