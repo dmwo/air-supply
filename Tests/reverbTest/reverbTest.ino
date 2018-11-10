@@ -22,7 +22,7 @@ void setup()
     AudioMemory(20);
     AudioNoInterrupts();
     audioShield.enable();
-    audioShield.inputSelect(AUDIO_INPUT_LINEIN);
+    audioShield.inputSelect(14);
     audioShield.lineInLevel(5);
     audioShield.lineOutLevel(10);
     audioShield.unmuteHeadphone();
@@ -32,10 +32,12 @@ void setup()
     mixer1.gain(1, 0.5);
     AudioInterrupts();
 
-
+    pinMode(13, INPUT);
+    pinMode(13, OUTPUT);
 }
 
 void loop()
 {
-    reverb1.reverbTime(3.0);
+
+    //reverb1.reverbTime(3.0);
 }
