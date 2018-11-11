@@ -22,28 +22,30 @@ void setup()
     AudioNoInterrupts();
     audioShield.enable();
     audioShield.inputSelect(0);
-    audioShield.lineInLevel(5);
-    audioShield.lineOutLevel(10);
+    audioShield.lineInLevel(1);
+    audioShield.lineOutLevel(1);
     audioShield.unmuteHeadphone();
     audioShield.adcHighPassFilterDisable();
     audioShield.volume(1.0);
     mixer1.gain(0, 0.5);
     mixer1.gain(1, 0.5);
     AudioInterrupts();
-    pinMode(14, INPUT);
+    pinMode(11, INPUT);
     pinMode(ledPin, OUTPUT);
     Serial.begin(9600);
 }
 
 void loop()
-{
-    if (analogRead(14) > 2)
-    {
+{ /*
+    if (analogRead(11) > 2)
         digitalWrite(ledPin, LOW);
         delay(400);
         digitalWrite(ledPin, HIGH);
         delay(400);
     }
-
+*/
+    Serial.print(analogRead(23));
+    Serial.print("\n");
+    delay(500);
     //reverb1.reverbTime(3.0);
 }
