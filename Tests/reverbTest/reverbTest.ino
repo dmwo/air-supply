@@ -18,19 +18,20 @@ AudioControlSGTL5000 audioShield; //xy=71,97
 short ledPin = 13;
 void setup()
 {
+    /*
     AudioMemory(20);
     AudioNoInterrupts();
     audioShield.enable();
     audioShield.inputSelect(0);
-    audioShield.lineInLevel(1);
-    audioShield.lineOutLevel(1);
+    audioShield.lineInLevel(.5);
+    audioShield.lineOutLevel(.5);
     audioShield.unmuteHeadphone();
     audioShield.adcHighPassFilterDisable();
     audioShield.volume(1.0);
     mixer1.gain(0, 0.5);
     mixer1.gain(1, 0.5);
-    AudioInterrupts();
-    pinMode(11, INPUT);
+    AudioInterrupts();*/
+    pinMode(20, INPUT);
     pinMode(ledPin, OUTPUT);
     Serial.begin(9600);
 }
@@ -44,7 +45,7 @@ void loop()
         delay(400);
     }
 */
-    Serial.print(analogRead(20));
+    Serial.print(digitalRead(20));
     Serial.print("\n");
     delay(500);
     //reverb1.reverbTime(3.0);
