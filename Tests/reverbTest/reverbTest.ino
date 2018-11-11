@@ -30,7 +30,7 @@ void setup()
     mixer1.gain(0, 0.5);
     mixer1.gain(1, 0.5);
     AudioInterrupts();
-
+ 
     pinMode(13, INPUT);
     Serial.begin(9600);
 }
@@ -38,9 +38,6 @@ void setup()
 void loop()
 {
     int x = digitalRead(13);
-    if (x > 20)
-    {
-        Serial.print("check\n");
-    }
+    Serial.print(x);
     //reverb1.reverbTime(3.0);
 }
