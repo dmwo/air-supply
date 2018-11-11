@@ -1,8 +1,8 @@
 #include <Audio.h>
 #include <Wire.h>
 #include <SPI.h>
-#include <SD.h>
-#include <SerialFlash.h>
+//#include <SD.h>
+//#include <SerialFlash.h>
 // GUItool: begin automatically generated code
 AudioInputI2S lineIn;      //xy=66,43
 AudioEffectReverb reverb1; //xy=246,144
@@ -15,7 +15,7 @@ AudioConnection patchCord4(mixer1, 0, lineOut, 0);
 AudioConnection patchCord5(mixer1, 0, lineOut, 1);
 AudioControlSGTL5000 audioShield; //xy=71,97
 // GUItool: end automatically generated code
-
+short ledPin = 13;
 void setup()
 {
     AudioMemory(20);
@@ -30,14 +30,20 @@ void setup()
     mixer1.gain(0, 0.5);
     mixer1.gain(1, 0.5);
     AudioInterrupts();
- 
-    pinMode(13, INPUT);
+    pinMode(14, INPUT);
+    pinMode(ledPin, OUTPUT);
     Serial.begin(9600);
 }
 
 void loop()
 {
-    int x = digitalRead(13);
-    Serial.print(x);
+    if (analogRead(14) > 2)
+    {
+        digitalWrite(ledPin, LOW);
+        delay(400);
+        digitalWrite(ledPin, HIGH);
+        delay(400);
+    }
+
     //reverb1.reverbTime(3.0);
 }
