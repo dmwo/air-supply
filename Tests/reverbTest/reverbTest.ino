@@ -44,7 +44,7 @@ void loop()
         delay(400);
     }
 */
-    Serial.print(analogRead(23));
+    Serial.print(analogRead(20));
     Serial.print("\n");
     delay(500);
     //reverb1.reverbTime(3.0);
