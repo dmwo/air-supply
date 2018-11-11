@@ -3,7 +3,6 @@
 #include <SPI.h>
 #include <SD.h>
 #include <SerialFlash.h>
-
 // GUItool: begin automatically generated code
 AudioInputI2S lineIn;      //xy=66,43
 AudioEffectReverb reverb1; //xy=246,144
@@ -22,7 +21,7 @@ void setup()
     AudioMemory(20);
     AudioNoInterrupts();
     audioShield.enable();
-    audioShield.inputSelect(14);
+    audioShield.inputSelect(0);
     audioShield.lineInLevel(5);
     audioShield.lineOutLevel(10);
     audioShield.unmuteHeadphone();
@@ -33,11 +32,15 @@ void setup()
     AudioInterrupts();
 
     pinMode(13, INPUT);
-    pinMode(13, OUTPUT);
+    Serial.begin(9600);
 }
 
 void loop()
 {
-
+    int x = digitalRead(13);
+    if (x > 20)
+    {
+        Serial.print("check\n");
+    }
     //reverb1.reverbTime(3.0);
 }
