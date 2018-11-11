@@ -37,14 +37,15 @@ void setup()
 }
 
 void loop()
-{ /*
+{
+    /*
     if (analogRead(11) > 2)
         digitalWrite(ledPin, LOW);
         delay(400);
         digitalWrite(ledPin, HIGH);
         delay(400);
     }
-*/
+    */
     Serial.print(digitalRead(20));
     Serial.print("\n");
     delay(500);
